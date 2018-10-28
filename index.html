@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Shame of GitHub</title>
+    <meta name="description" content="">
+    <meta name="author" content="Nathan and Jimmy">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style> 
+        #service1 div {
+        font: 10px sans-serif;
+        background-color: steelblue;
+        text-align: right;
+        padding: 3px;
+        margin: 1px;
+        color: white;
+    }
+     </style>
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+</head>
+
+<body id="top">
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+        <nav class="header-nav">
+
+            <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+
+            <div class="header-nav__content">
+                <h3>Navigation</h3>
+                
+                <ul class="header-nav__list">
+                    <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
+                    <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
+                    <li><a class="smoothscroll"  href="#twinder" title="twinder" onclick="changeFollowersInfo()">Twinder</a></li>
+                    <li><a class="smoothscroll"  href="#race" title="race" onclick="changeStatsInfo()">Race Them All</a></li>
+                    <li><a class="smoothscroll"  href="#commits" title="commits" onclick="changeCommitsInfo()">Commits</a></li>
+                    <li><a class="smoothscroll"  href="#employees" title="employees">Employees</a></li>
+                </ul>
+    
+                <p>Do you wanna check the <b style="font-style: bold">shame</b> of GitHub? This is your page. Use it carefully.</p>
+
+            </div> <!-- end header-nav__content -->
+
+        </nav>  <!-- end header-nav -->
+
+        <a class="header-menu-toggle" href="#0">
+            <span class="header-menu-text">Menu</span>
+            <span class="header-menu-icon"></span>
+        </a>
+
+    </header> <!-- end s-header -->
+
+
+    <!-- home
+    ================================================== -->
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/background_title.jpg"
+             data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+
+        <div class="overlay"></div>
+        <div class="shadow-overlay"></div>
+
+        <div class="home-content">
+
+            <div class="row home-content__main">
+
+                <h3>Welcome to Shame of GitHub</h3>
+
+                <h1>
+                    We are here to show you stuff you shoudn't know... maybe >:)
+                </h1>
+
+                <div class="home-content__buttons">
+                    <a href="#twinder" class="smoothscroll btn btn--stroke" onclick="changeFollowersInfo()"
+                        style="background-image: url('images/twinder.png'); margin-left: 50px">
+                        Twinder
+                    </a>
+                    <a href="#race" class="smoothscroll btn btn--stroke" onclick="changeStatsInfo()"
+                        style="background-image: url('images/race_them_all.png'); width: 240px; height: 140px;">
+                        Race Them All
+                    </a>
+                    <a href="#commits" class="smoothscroll btn btn--stroke" onclick="changeCommitsInfo()"
+                        style="background-image: url('images/funny_commits.png')">
+                        Commits
+                    </a>
+                    
+                </div>
+                <div class="row race-list block-1-2 block-tab-full">
+                    <div class="col-block service-item">
+                        <h3 class="h4" style="text-align: center; color: crimson">
+                            Choose your Seed (Twinder and Race Them All): <input id="seed1" type="number"
+                                            min="0" max="31000000" value="0" style="margin-left: 225px">
+                        </h3>
+                    </div>
+                    <div class="col-block service-item">
+                        <h3 class="h4" style="text-align: center; color: crimson">
+                            Choose a Username (Commits): <input id="username1" type="text" style="margin-left: 225px">
+                        </h3>
+                </div>
+                </div>
+
+            </div>
+
+            <div class="home-content__scroll">
+                <a href="#about" class="scroll-link smoothscroll">
+                    <span>About Us</span>
+                </a>
+            </div>
+
+            <div class="home-content__line"></div>
+
+        </div> <!-- end home-content -->
+
+    </section> <!-- end s-home -->
+
+
+    <!-- about
+    ================================================== -->
+    <section id='about' class="s-about">
+
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead subhead--dark">About Us</h3>
+                <h1 class="display-1 display-1--light">We Are Shame of GitHub</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row about-desc" data-aos="fade-up">
+            <div class="col-full">
+                <p>
+                    We are here to offer you funny things about GitHub. <br>
+                    For example, you can search people with <b style="font-style: bold">less than 10 followers</b>
+                    and choose to follow them... or not. <br>
+                    You can also search random people and <b style="font-style: bold">find their level</b>
+                    in GitHub. They can be slimes, dragons, warriors, etc.<br>
+                    And last but not least, you can <b style="font-style: bold">search people's commits</b>.
+                    You may find funny comments between them. It's not like we did some random commits comments
+                    and they're not professional at all or something.
+                </p>
+            </div>
+        </div> <!-- end about-desc -->
+
+        <div class="row about-stats stats block-1-4 block-m-1-2 block-mob-full" data-aos="fade-up">
+                
+            <div class="col-block stats__col ">
+                <div class="stats__count">127</div>
+                <h5>Awards Received</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">9001</div>
+                <h5>Cups of Coffee</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">109</div>
+                <h5>Projects Completed</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__count">-102</div>
+                <h5>Happy employees</h5> 
+            </div>
+
+        </div> <!-- end about-stats -->
+
+        <div class="about__line"></div>
+
+    </section> <!-- end s-about -->
+
+
+    <!-- twinder
+    ================================================== -->
+    <section id='twinder' class="s-twinder">
+
+        <div class="intro-wrap">
+                
+            <div class="row section-header has-bottom-sep light-sep" data-aos="fade-up">
+                <div class="col-full">
+                    <h1 class="display-2 display-2--light">Twinder</h1>
+                    <h3 class="subhead">Find your person to follow in this big ocean of GitHub users</h3>
+                </div>
+            </div> <!-- end section-header -->
+
+        </div> <!-- end intro-wrap -->
+
+        <div class="row twinder-content" data-aos="fade-up">
+            <div class="col-full masonry-wrap">
+                <div class="masonry">
+                    
+                    <div class="home-content__buttons">
+                        <a class="btn btn--stroke" title="Not Follow" onclick="nextUser(false)"
+                          style="background-image: url('images/nope.jpg'); height: 15rem;
+                          margin-top: 20rem"></a>
+                        <a class="btn btn--stroke" title="Follow" onclick="nextUser(true)"
+                         style="background-image: url('images/follow.jpg'); margin-left: 50rem; height: 15rem"></a>
+                    </div>
+    
+                    <div class="masonry__brick" style="margin-bottom: 100px">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a class="thumb-link" id="profilePic1" data-size="1050x700" href="images/user.jpg">
+                                    <img src="images/user.jpg" id="profilePic2">
+                                </a>
+                            </div>
+    
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title" id="usernamePic">
+                                    Username
+                                </h3>
+                                <p class="item-folio__cat" id="nbFollowers">
+                                    0 followers
+                                </p>
+                            </div>
+
+                            <a href="images/user.jpg" id="profilePic3"  class="item-folio__project-link" title="Profile Picture">
+                                <i class="icon-link"></i>
+                            </a>
+    
+                        </div>
+                    </div> <!-- end masonry__brick -->
+                </div> <!-- end masonry -->
+                
+                <h4 id="followStatus" style="text-align: center; margin-top: -90px">Waiting</h4>
+
+                <h3 class="h4" style="text-align: center; font: bold; color: crimson" data-aos="fade-up">
+                    Choose your Seed: <input id="seed2" type="number" min="0" max="31000000" value="0"
+                                            style="margin-left: 485px">
+                    <input type="image" src="images/change.png" alt="submit" width="100" height="100"
+                            onclick="changeFollowersInfo()">
+                </h3>
+            </div> <!-- end col-full -->
+        </div> <!-- end twinder-content -->
+
+    </section> <!-- end s-twinder -->
+
+
+    <!-- race them all
+    ================================================== -->
+    <section id='race' class="s-race">
+
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h1 class="display-2">Race Them All</h1>
+                <h3 class="subhead">Check who is the best in the big sea of GitHub</h3>
+            </div>
+        </div> <!-- end section-header -->
+        
+        <h3 class="h4" style="color: crimson; text-align: center" data-aos="fade-up">
+            Choose your Seed: <input id="seed3" type="number" min="0" max="31000000" value="0"
+                                    style="margin-left: 685px">
+            <input type="image" src="images/change.png" alt="submit" width="100" height="100"
+                    onclick="changeStatsInfo()">
+        </h3>
+        
+        <div class="row race-list block-1-2 block-tab-full">
+
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-text" id="service1">
+                </div>
+            </div>
+
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-text" id="service2">
+                </div>
+            </div>
+
+        </div> <!-- end race-list -->
+
+    </section> <!-- end s-race -->
+
+    <!-- commits
+    ================================================== -->
+    <section id='commits' class="s-commits">
+
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h1 class="display-2" style="color: #FFFFFF">Commits</h1>
+                <h3 class="subhead">Search someone's commits to have some fun</h3>
+            </div>
+        </div> <!-- end section-header -->
+        
+        <h3 class="h4" style="color: crimson; text-align: center" data-aos="fade-up">
+            Choose a Username: <input id="username2" type="text" style="margin-left: 685px">
+                <input type="image" src="images/change.png" alt="submit" width="100" height="100"
+                        onclick="changeCommitsInfo()">
+        </h3>
+
+        <div class="row commits-list block-1-2 block-tab-full" id="insertCommits">
+
+            <div class="col-block commit-item" data-aos="fade-up">
+                <h3 class="h3" style="color: #FFFFFF; text-align: right" data-aos="fade-up">Selected username:</h3>
+            </div>
+            <div class="col-block commit-item" data-aos="fade-up">
+                <h3 class="h3" style="color: #FFFFFF; text-align: left" data-aos="fade-up" id="usernameSelected">Username</h3>
+            </div>
+
+        </div> <!-- end commits-list -->
+
+    </section> <!-- end s-commits -->
+
+    <!-- employees
+    ================================================== -->
+    <section id="employees" class="s-employees">
+
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Our employees</h3>
+                <h1 class="display-2">Shame of GitHub has been honored to
+                work with these employees</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row employees-testimonials" data-aos="fade-up">
+            <div class="col-full">
+                <div class="testimonials">
+
+                    <div class="testimonials__slide">
+
+                        <p>I could write good things about me, but this is shame of GitHub, so I prefer
+                            to let you choose if I have good thing or bad things :3
+                        </p>
+
+                        <img src="images/kyoma.jpg" alt="Author image" class="testimonials__avatar">
+                        <div class="testimonials__info">
+                            <span class="testimonials__name">Nathan Gonzalez</span> 
+                            <span class="testimonials__pos">Boss</span>
+                        </div>
+
+                    </div>
+
+                    <div class="testimonials__slide">
+                        
+                        <p>I'm too lazy to write it so my partener is doing it for me.
+                            The only thing I know is that is the project is over :D
+                        </p>
+
+                        <img src="images/user.jpg" alt="Author image" class="testimonials__avatar">
+                        <div class="testimonials__info">
+                            <span class="testimonials__name">Jimmy Verdasca</span> 
+                            <span class="testimonials__pos">Boss (sometimes)</span>
+                        </div>
+
+                    </div>
+
+                </div><!-- end testimonials -->
+            </div> <!-- end col-full -->
+        </div> <!-- end employees-testimonials -->
+
+    </section> <!-- end s-employees -->
+    
+    <!-- footer
+    ================================================== -->
+    <footer>
+
+        <div class="row footer-main">
+
+            <div class="col-six tab-full left footer-desc">
+
+                <h4 style="text-align: center">Our best dance for our clients</h6>
+                <div class="footer-logo"></div>
+                
+            </div>
+
+            <div class="col-six tab-full right footer-subscribe">
+                <p>Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+                Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
+                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt.
+                Nulla porttitor accumsan tincidunt. Quaerat voluptas autem necessitatibus vitae aut.
+            </div>
+
+        </div> <!-- end footer-main -->
+
+        <div class="row footer-bottom">
+
+            <div class="col-twelve">
+                <div class="copyright">
+                    <span>© Copyright Shame of GitHub 2018</span> 
+                    <span>Webite by <b style="font-style: bold">Nathan and Jimmy</b></span>	
+                </div>
+
+                <div class="go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+        </div> <!-- end footer-bottom -->
+
+    </footer> <!-- end footer -->
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="line-scale-pulse-out">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="./js/index.js"></script>
+
+</body>
+
+</html>

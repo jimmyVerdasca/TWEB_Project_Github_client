@@ -1,0 +1,5 @@
+1. Ouvrir un terminal node.js.
+2. Écrire dans le terminal http-server "C:\Users\NOM_UTILISATEUR\PATH_TO_PROJECT" -c-1
+pour lancer un serveur en local.
+3. Vérifier dans quel port et a quel adresse IP se lance le projet, et lancer l'application
+avec une des 3 options.
