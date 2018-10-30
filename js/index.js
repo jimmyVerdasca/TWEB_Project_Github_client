@@ -1,4 +1,4 @@
-let entryPoint = 'https://sheltered-springs-45929.herokuapp.com:8080'
+let entryPoint = 'https://sheltered-springs-45929.herokuapp.com'
 
 /**
  * Function used to asked to the server the informations needed to show
